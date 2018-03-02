@@ -44,11 +44,51 @@ void Merge(int numbers[], int i, int j, int k) {
 		++mergePos;
 	}
 	// If right partition is not empty, add remainig elements to merged numbers
-	while ( rightPos <= k) {}
+	while ( rightPos <= k) {
+		mergedNumbers[mergePos] = numbers[rightPos];
+		++rightPos;
+		++mergePos;
+	}
+	// Copy merged numbers back to numbers
+	for ( mergePos = 0 ; mergePos < mergedSize; ++mergePos) {
+		numbers[i+mergePos ] = mergedNumbers[mergePos];
+	}	
+	
 }
 	
+void MergeSort (int numbers[], int i, int k) {
+	int j = 0;
+	
+	if (i < k) {
+		j = (i+k)/2; // Find the midpoint in the partition
+	//Recursively sort left and right partitions
+	
+	MergeSort(numbers, i,j);
+	MergeSort(numbers, j+1,k);
+
+	// Merge left and right partition in sorted order
+	Merge(numbers,i,j,k);
+}
+
+}
 
 int main () {
+
+	int numbers[] = { 1, 3, 100,-100, - 2, 0, 8, 19 };
+	const int NUMBERS_SIZE = 8 ;
+	int i = 0;
+
+	cout << " UNSORTED " << endl;
+	for (i = 0 ; i < NUMBERS_SIZE ; ++i) {
+		cout << numbers[i] <<" ";
+	}
+
+	MergeSort(numbers,i, NUMBERS_SIZE -1 );
+
+	cout << "\n SORTED " << endl;
+	for (i = 0 ; i < NUMBERS_SIZE ; ++i) {
+		cout << numbers[i] <<" ";
+	}
 
 return 0;
 }
