@@ -83,12 +83,14 @@ int main () {
 		cout << numbers[i] <<" ";
 	}
 
-	MergeSort(numbers,i, NUMBERS_SIZE -1 );
+	MergeSort(numbers,0, NUMBERS_SIZE -1 );
 
-	cout << "\n SORTED " << endl;
+	cout << " \nSORTED " << endl;
 	for (i = 0 ; i < NUMBERS_SIZE ; ++i) {
 		cout << numbers[i] <<" ";
 	}
+
+
 
 return 0;
 }
