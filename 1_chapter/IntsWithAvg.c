@@ -7,17 +7,25 @@ int main () {
 	int x;
 	int i = 0;
 	int arr[100];
-	int sum = 0;
+	float sum = 0;
 	int counter = 0;
-	for (i = 0 ; i< 3 ; i++ ){
-	scanf("%d", &x);
-	arr[i] = x;
+	for (i = 0 ; i< 100 ; i++ ){
+		scanf("%d", &x);
+		if ( x == -1) {
+			break;
+		}
+		arr[i] = x;
+		counter = counter +1;
+		sum = sum +x;
+		 
 
-	}
+		}
 
-	for ( i = 0 ; i< 3 ; i++ ){
+	for ( i = counter -1 ; -1 < i ; i-- ){
 		printf("\n%d",arr[i]);
+
 	}
+		printf("\n%f",sum/counter); 
 
 		return 0;
 }
