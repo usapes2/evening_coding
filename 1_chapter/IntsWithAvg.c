@@ -1,6 +1,9 @@
+/* C program that inputs integers into an array, prints them out in reverse order
+ * 1 per line, followed by the average on the last line*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 
 int main () {
 
@@ -20,12 +23,18 @@ int main () {
 		 
 
 		}
-
+	if ( counter > 1) {
 	for ( i = counter -1 ; -1 < i ; i-- ){
-		printf("\n%d",arr[i]);
+		if ( i == counter -1 ) {
+		printf("%d",arr[i]); }
+		else { 
+		printf("\n%d",arr[i]); }
+		
 
 	}
-		printf("\n%f",sum/counter); 
+		printf("%f\n",sum/counter);  }
+	else { 
+		printf("N/A \n",sum/counter);  }
 
 		return 0;
 }
