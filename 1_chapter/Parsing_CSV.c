@@ -40,6 +40,23 @@ void ParseStudentData(char line[],int *UIN,char NetID[],int *Exam1,int *Exam2,in
 }
 int main () {
 
+	char line[256];
+	int linesize = sizeof(line) / sizeof(line[0]);
+
+	int uin;
+	char netid[16];
+	int exam1;
+	int exam2;
+	int exam3;
+
+	fgets(line,linesize,stdin);
+
+	ParseStudentData(line, &uin, netid, &exam1, &exam2, &exam3);
+
+	printf("%s: %d\n", netid, uin);
+	printf("%d\n",exam1);
+	printf("%d\n",exam2);
+	printf("%d\n",exam3);
 
 	return 0;
 }
