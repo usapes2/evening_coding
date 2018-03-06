@@ -1,20 +1,25 @@
 
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
 // When searching a linked-list, we pass in the list and the key we are looking 
 // for. If a node contaning this key found, the function returns a pointer to this
 // LL node, which contains the matching (key,value) pair:
 
-LLNode* LLSearch(LL *list, LLKey key);
-typedef struct Student 
+//LLNode* LLSearch(LL *list, LLKey key);
+typedef struct STUDENT 
 {
 	char *Netid;
 	int Midterm;
 	int Final;
-}Student;
+}STUDENT;
 
 //we are going to stotre STUDENTs into a linked list, using their Netid as the key,
 //and the "value" is a STUDENT.
 
-typedef char* LLkey;
+typedef char* LLKey;
 typedef STUDENT LLValue;
 
 // A node in a singly linked-list is thus defined as a Key, Value and a Next pointer:
@@ -47,4 +52,25 @@ LL *LLCreate()
 	list -> Count = 0;
 
 	return list;
+}
+
+// LLCompareKeys: compares key1 and key2, reurning
+// -1 if key1 < key2
+// 0 if key1 == key2
+// +1 if key1 > key2
+int LLCompareKeys (LLKey key1, LLKey key2) 
+{
+
+// NOTE: w/ STUDENT's, keys are Netids, so use strcmp.
+	if (strcmp(key1, key2) < 0 )
+		return -1;
+	else if (strcmp(key1, key2) == 0 )
+		return 0;
+	else 
+		return +1;
+}
+
+int main () 
+{
+	return 0;
 }
