@@ -22,18 +22,20 @@ int main()
 	tempx = x;
 	tempy = y;
 
-	do
-	{
-		r = x % y ; // remainer calculation
-		cout << " x = " << x << " y = " << y << " r = " << r <<endl;
 
+	r = x % y ; // remainer calculation
+	while ( r!=0)
+	{
 		x = y;
 		y = r;
 
-	} while (r != 0); // stop test
+		r = x % y ; // remainer calculation
+		cout << " x = " << x << " y = " << y << " r = " << r <<endl;
+
+			} 
 	
-	cout << s.str() << x << endl;
-	cout << "check gcd devides x " << tempx % x << endl;
-	cout << "check gcd devides y " << tempy % x << endl;
+	cout << s.str() << y << endl;
+	cout << "check gcd devides x " << tempx % y << endl;
+	cout << "check gcd devides y " << tempy % y << endl;
 	return 0;
 }
