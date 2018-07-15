@@ -7,23 +7,21 @@ void primePrinter (int n) ;
 int main () 
 
 {
-	primePrinter(11);
+	primePrinter(16);
 	return 0;
 }
 
 
 void primePrinter (int n) 
-{
-	int sw = 0;
+{ int t;
 	for ( int i = 2 ; i < n+1 ; i++ ) { // going through numbers 
-		 sw = 0;
-	 for ( int j = 2 ; j < i ; j ++ ) 
-         	 {
-		 if ( i % j == 0 )  { cout << "Number " << i << " is not  a prime "<< endl ; }
-		 sw = 1;
-		 break; 
-        	}
-	 if ( sw  == 0 ) { cout << " Number " << i << " is prime "<<endl ;}
-	}
+		int t = 0;
+	 for ( int j = 2 ; j < i ; j ++ ) {
+		if ( i % j == 0 ) t = 1;	
+	 }
 
+	 if ( t == 0 ) cout << i << " Prime " <<endl;
+	 
+	}
+            
 }
