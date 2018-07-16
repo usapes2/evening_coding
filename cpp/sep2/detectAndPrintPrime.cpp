@@ -7,7 +7,7 @@ void primePrinter (int n) ;
 int main () 
 
 {
-	primePrinter(16);
+	primePrinter(41);
 	return 0;
 }
 
