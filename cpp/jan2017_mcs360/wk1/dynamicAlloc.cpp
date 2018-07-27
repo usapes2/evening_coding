@@ -27,5 +27,7 @@ int main () {
 	for ( int i = 0 ; i < n ; i ++ ) {
 		cout << "b[" << i << "] = " << b[i] ;
 		cout << endl; }
+	delete[] b; // deallocation : release memory
+	
 	return 0;
 }
