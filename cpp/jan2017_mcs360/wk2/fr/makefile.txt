@@ -1,0 +1,12 @@
+gpp=/usr/bin/g++
+
+command_line_args:
+	$(gpp) -o /tmp/command_line_args command_line_args.cpp
+
+use_phonebook:
+	$(gpp) -c phonebook.cpp
+	$(gpp) -c use_phonebook.cpp
+	$(gpp) -o /tmp/use_phonebook phonebook.o use_phonebook.o
+
+clean:
+	/bin/rm -f *.o
