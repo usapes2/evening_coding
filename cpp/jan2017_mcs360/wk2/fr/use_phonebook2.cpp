@@ -1,4 +1,4 @@
-// L-5 MCS 360 Fri 8 Sep 2017 : use_phonebook2.cpp
+/*// L-5 MCS 360 Fri 8 Sep 2017 : use_phonebook2.cpp
 
    deallocation as a variation of the other program use_phonebook.cpp.
 
@@ -25,7 +25,6 @@ using namespace std;
 int main ( int argc, char* argv[] )
 {
    PhoneBook *b;
-   PhoneBook *d(s);
 
    cout << "welcome to our phone book" << endl;
    cout << "reading data from file ..." << endl;

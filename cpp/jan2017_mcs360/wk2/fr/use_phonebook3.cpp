@@ -34,6 +34,14 @@ int main ( int argc, char* argv[] )
       b->add(new_entry);
    }
 
+   for ( int  i = 0 ; i < n ; i++ )
+	   cout << (*b)[i] << endl;
+   b->del(1);
+   cout << " \n _______________________________________ " << endl;
+   for ( int  i = 0 ; i < b->length() ; i++ )
+	   cout << (*b)[i] << endl;
+
+	   
    b->~PhoneBook();
 
    return 0;

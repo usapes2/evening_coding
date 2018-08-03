@@ -28,6 +28,9 @@ class PhoneBook
       /* returns the k-th entry */
 
       void add(const std::string s);
+
+      void del(size_t k ) ;
+      
       /* adds a new entry */
 
    private:

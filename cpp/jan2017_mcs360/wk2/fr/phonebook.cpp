@@ -76,3 +76,9 @@ void PhoneBook::add(const std::string s)
 
    outs.close();
 }
+void PhoneBook::del(size_t k) {
+
+	for ( int i = k ; i < number - 1; i ++ ) {
+		data[i] = data [ i +1 ]; }
+	number = number -1;
+}
