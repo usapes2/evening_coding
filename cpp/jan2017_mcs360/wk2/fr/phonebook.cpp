@@ -25,6 +25,29 @@ PhoneBook::PhoneBook()
    ins.close();
 }
 
+PhoneBook::PhoneBook(std::string s)
+{
+   int n = s.length();
+   char ss[n-1];
+   ss[0] = s[0];
+
+   for(int i=1; i<n; i++)
+   {
+      ss[i] = s[i];
+   }
+  
+   std::ifstream ins(ss);
+
+   ins >> number;
+   data = new std::string[number];
+   ins.ignore(std::numeric_limits<int>::max(),'\n');
+   for(int k=0; k<number; k++)
+      getline(ins,data[k],'\n');
+
+   ins.close();
+}
+
+
 PhoneBook::~PhoneBook()
 {
    delete[] data;

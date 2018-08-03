@@ -14,6 +14,10 @@ class PhoneBook
       PhoneBook();
       /* reads entries from file */
 
+      PhoneBook(std::string s);
+      /* reads entries from file */
+      /*exercise 3 wk2 fr */
+
       ~PhoneBook();
       /* deallocates memory */
 

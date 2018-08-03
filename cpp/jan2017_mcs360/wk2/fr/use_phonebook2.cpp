@@ -1,6 +1,5 @@
 // L-5 MCS 360 Fri 8 Sep 2017 : use_phonebook2.cpp
 
-/* Below we illustrate the use of dynamic memory allocation and
    deallocation as a variation of the other program use_phonebook.cpp.
 
    A possible application could be to keep a backup copy of the
@@ -26,6 +25,7 @@ using namespace std;
 int main ( int argc, char* argv[] )
 {
    PhoneBook *b;
+   PhoneBook *d(s);
 
    cout << "welcome to our phone book" << endl;
    cout << "reading data from file ..." << endl;
