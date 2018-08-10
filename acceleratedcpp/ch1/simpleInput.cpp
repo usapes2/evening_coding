@@ -1,17 +1,17 @@
 #include<iostream>
 #include<string>
-using namespace std;
+#include<iostream>
 
 int main (){
-	string s;
-	string ss;
+	std::string s;
+	std::string ss;
 
-	cout<<"Please enter a string " << endl;
-	cin>>s;
-	cout<<"Please enter a string " << endl;
-	cin>>ss;
-	cout << "s "<<s<<endl;
-	cout << "ss "<<ss<<endl;
+	std::cout<<"Please enter a string " << std::endl ;
+	std::cin>>s;
+	std::cout<<"Please enter a string " << std::endl;
+	std::cin>>ss;
+	std::cout << "s "<<s<<std::endl;
+	std::cout << "ss "<<ss<<std::endl;
 	
 
 	return 0;
