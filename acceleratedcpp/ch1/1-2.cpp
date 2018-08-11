@@ -2,9 +2,10 @@
 #include<iostream>
 #include<string>
 
+using namespace std;
 int main() {
-	const std::string hello="hello"; // Valid
-	//const std::string message="hello" +",world"+"!"; //not valid
+	const string hello="hello"; // Valid
+	const string message="hell" + "1" + "2";// wierd error
 
 	return 0;
 }
