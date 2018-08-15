@@ -23,7 +23,8 @@ int main () {
 	cin >> midterm >> final;
 
 	// ask for the homework grades 
-	cout << "Enter all your homework grades, followed by end-off-file: ";
+	cout << "Enter all your homework grades,"
+	       "	followed by end-off-file: ";
 
 	// the number and sum of grades read so far
 	int count = 0;
@@ -35,13 +36,19 @@ int main () {
 	// invariant:
 	// we have read count grades so far, and
 	// sum is the sum of the first count grades
-	while(cin>>x) {
+	/* Next condition implicitly uses an istream as the subject of the while condition: 
+	 if ( cin >> x) { * .... }  is the same statement as cin >>x ; if ( cin ) { ... }
+	 cin has a type of istream. */
+	
+	while(cin>>x) { // What's important to know this condition succeeds if the most recent input request (cin >> x) succeded
 		++count;
 		sum+=x;
 	}
 	// write the result 
-	streamsize prec = cout.precision();
+	streamsize prec = cout.precision(); // presision is a member function of cout is used to reset the precision.
 	cout << "Your final grade is "<< setprecision(3)<<0.2*midterm+0.4*final+0.4*sum/count<<setprecision(prec)<<endl;
+	// setprecision is a manipulator.It manipulates the stream by causing subsequent output on that stream to appear with the given 
+	// numver of sig digits.
 
 
 
