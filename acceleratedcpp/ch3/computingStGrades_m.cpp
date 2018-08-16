@@ -10,7 +10,9 @@ using std::endl;
 using std::setprecision;
 using std::string;
 using std::streamsize;
+using std::vector;
 
+//using namespace std;
 int main () {
 	// ask for and read the student's name
 	cout <<"Please enter your first name:";
@@ -33,7 +35,8 @@ int main () {
 	
 	// a variable into which to read
 	double x;
-	
+	vector<double> hw;
+
 
 	// invariant:
 	// we have read count grades so far, and
@@ -42,10 +45,9 @@ int main () {
 	 if ( cin >> x) { * .... }  is the same statement as cin >>x ; if ( cin ) { ... }
 	 cin has a type of istream. */
 	
-	while(cin>>x) { // What's important to know this condition succeeds if the most recent input request (cin >> x) succeded
-		++count;
-		sum+=x;
-	}
+	while(cin>>x) 
+		hw.push_back(x);
+
 	// write the result 
 	streamsize prec = cout.precision(); // presision is a member function of cout is used to reset the precision.
 	cout << "Your final grade is "<< setprecision(3)<<0.2*midterm+0.4*final+0.4*sum/count<<setprecision(prec)<<endl;
