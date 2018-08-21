@@ -17,10 +17,13 @@ using std::vector;
 using std::sort;
 using std::domain_error;
 
-// median
 // grade (double,double,double)
 // grade (double,double,const vector<double>&) 
 // read_hw(istream&, vector<double>&)
+// Calculating the median 
+double grade ( double midterm, double final, double homework) {
+	return 0.2*midterm + 0.4*final + 0.4 * homework;
+} 
 
 double median(vector<double> vec)  {
 
@@ -36,6 +39,14 @@ double median(vector<double> vec)  {
 
 	return size % 2 == 0 ? ( vec[mid] + vec[mid-1] ) / 2 : vec[mid];
 }
+
+double grade ( double midterm, double final, const vector<double>& hw) {
+	if(hw.size() == 0)
+		throw domain_error("student has done no hw");
+	return grade(midterm,final,median(hw));
+}
+
+
 int main () {
 
 
