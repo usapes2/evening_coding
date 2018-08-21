@@ -16,15 +16,15 @@ using std::streamsize;
 using std::vector;
 using std::sort;
 using std::domain_error;
+using std::istream;
+//using namespace std;
 
-// grade (double,double,double)
-// grade (double,double,const vector<double>&) 
-// read_hw(istream&, vector<double>&)
-// Calculating the median 
+// Calculating the grade
 double grade ( double midterm, double final, double homework) {
 	return 0.2*midterm + 0.4*final + 0.4 * homework;
 } 
 
+// Calculating the median 
 double median(vector<double> vec)  {
 
 	typedef vector<double>::size_type vec_sz;
@@ -40,12 +40,27 @@ double median(vector<double> vec)  {
 	return size % 2 == 0 ? ( vec[mid] + vec[mid-1] ) / 2 : vec[mid];
 }
 
+// Calculating the grade with median 
 double grade ( double midterm, double final, const vector<double>& hw) {
 	if(hw.size() == 0)
 		throw domain_error("student has done no hw");
 	return grade(midterm,final,median(hw));
 }
 
+istream & read_hw(istream& in, vector <double>& hw) {
+	if(in) {
+		//get rid of previous contents
+		hw.clear();
+		// read hw grades
+		double x;
+		while ( in>>x )
+			hw.push_back(x);
+		//clear the stream so that input will work for the next student
+		in.clear();
+	}
+
+	return in;
+}
 
 int main () {
 
