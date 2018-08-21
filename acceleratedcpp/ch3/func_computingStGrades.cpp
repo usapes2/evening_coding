@@ -64,6 +64,33 @@ istream & read_hw(istream& in, vector <double>& hw) {
 
 int main () {
 
+	// ask for and read hte student's name
+	cout << "Please enter your first name: ";
+	string name;
+	cin >> name;
+	cout << " Hello, " << name << "!" << endl;
+
+	// ask fo and read the midterm and final grades 
+	cout << "Please enter your mid and final exam grades : ";
+	double midterm,final;
+	cin>>midterm>>final;
+	// ask for the hw grades
+	cout << " Enter al your hw grades,"
+		"followed by end of file ";
+	vector<double> homework;
+	// read the hw grades
+	read_hw(cin,homework);
+	// compute and generate the final grade, if possible
+	try {
+		double final_grade = grade(midterm,final,homework);
+		streamsize prec = cout.precision();
+		cout << endl;
+		cout << " Your final grade is" << setprecision(3) <<final_grade<<setprecision(prec)<<endl;
+	}catch (domain_error) {
+		cout << endl<<"You must enter your grades. "
+			"Please try agian."<<endl;
+		return 1;
+	}
 
 	return 0;
 }
