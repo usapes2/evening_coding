@@ -7,6 +7,9 @@
 #include <vector>
 #include <algorithm>
 #include <stdexcept>
+#include "grade.h"
+#include "Student_info.h"
+#include "median.h"
 
 using std::cin;
 using std::cout;
@@ -22,10 +25,6 @@ using std::max;
 
 
 // Calculating the grade
-double grade ( double midterm, double final, double homework) {
-	return 0.2*midterm + 0.4*final + 0.4 * homework;
-} 
-
 // Calculating the median 
 double median(vector<double> vec)  {
 
@@ -43,12 +42,6 @@ double median(vector<double> vec)  {
 }
 
 // Calculating the grade with median 
-double grade ( double midterm, double final, const vector<double>& hw) {
-	if(hw.size() == 0)
-		throw domain_error("student has done no hw");
-	return grade(midterm,final,median(hw));
-}
-
 istream & read_hw(istream& in, vector <double>& hw) {
 	if(in) {
 		//get rid of previous contents
@@ -79,10 +72,6 @@ istream& read(istream& is, Student_info& s)
 	return is;
 }
 
-double grade ( const Student_info& s)
-{
-	return grade(s.midterm,s.final,s.homework);
-}
 bool compare( const Student_info& x, const Student_info& y) 
 {
 	return x.name < y.name ;
