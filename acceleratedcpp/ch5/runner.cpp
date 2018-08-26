@@ -28,7 +28,7 @@ bool fgrade(const Student_info & s)
 	return grade(s)<60 ;
 }
 
-
+/*
 // separate passing and failing student records: first try
 vector<Student_info> extract_fails(vector<Student_info>& students)
 {
@@ -44,7 +44,22 @@ vector<Student_info> extract_fails(vector<Student_info>& students)
 
 	students = pass;
 	return fail;
-}
+} */
+// Second try: correct but potentially slow ( space efficient )
+vector<Student_info> extract_fails(vector<Student_info>& students)
+{
+	vector<Student_info> fail;
+	vector<Student_info>::size_type i = 0;
+	// invariant:elemts [0, i) of stuents represent passing grades
+	while ( i! = students.size()) {
+		if (fgrade(students[i])) {
+			fail.push_back(students[i] };
+			students.erase(students.begin() + 1);
+			} else 
+			++i;
+			}
+			return fail;}
+
 int main () {
 
 	vector<Student_info> students;
